@@ -975,7 +975,9 @@
             
             <div class="featured-content">
                 <div class="featured-image">
-                    <img src="images/logos/chiropro.png" alt="ChiroPro logo" class="featured-logo" onerror="console.log('Featured logo failed to load'); this.style.display='none';">
+                    <img src="images/logos/chiropro.png" alt="ChiroPro logo" class="featured-logo" 
+                         onload="console.log('✅ Featured logo loaded successfully')" 
+                         onerror="console.log('⚠️ Featured logo issue, but continuing'); this.style.opacity='0.7';">
                 </div>
                 
                 <div class="featured-info">
@@ -1038,7 +1040,9 @@
                     <p>Visit any of the chiropractic practices listed in our directory or contact them directly through their websites for more information about services, insurance acceptance, and appointments.</p>
                     <p>For comprehensive chiropractic care with advanced technology and proven results, we recommend:</p>
                     <div class="premium-contact">
-                        <img src="images/logos/chiropro.png" alt="ChiroPro logo" class="contact-logo" onerror="console.log('Contact logo failed to load'); this.style.display='none';">
+                        <img src="images/logos/chiropro.png" alt="ChiroPro logo" class="contact-logo" 
+                             onload="console.log('✅ Contact logo loaded successfully')" 
+                             onerror="console.log('⚠️ Contact logo issue, but continuing'); this.style.opacity='0.7';">
                         <div>
                             <h4>ChiroPro</h4>
                             <p>Phone: (618) 234-8300</p>
@@ -1694,12 +1698,29 @@
                 // Add loading attribute to help with timing
                 logo.loading = 'lazy';
                 
+                // Smart loading handler
+                const handleImageLoad = () => {
+                    // Give image extra time to fully decode
+                    setTimeout(() => {
+                        if (logo.naturalWidth > 0) {
+                            console.log(`✅ Successfully loaded logo: ${logo.src} (${logo.naturalWidth}x${logo.naturalHeight})`);
+                        } else if (logo.complete) {
+                            // Image loaded but dimensions not detected - this is OK for some formats
+                            console.log(`✅ Successfully loaded logo (no dimensions): ${logo.src} - likely SVG or special format`);
+                        } else {
+                            console.log(`❌ Failed to load logo after timeout: ${logo.src}`);
+                            logo.style.display = 'none';
+                        }
+                    }, 500); // Give 500ms for image to fully decode
+                };
+                
+                logo.onload = handleImageLoad;
+                
                 logo.onerror = function() {
                     console.log(`❌ Failed to load logo: ${this.src}`);
                     console.log(`❌ Image complete: ${this.complete}, naturalWidth: ${this.naturalWidth}, naturalHeight: ${this.naturalHeight}`);
-                    console.log(`❌ Image width: ${this.width}, height: ${this.height}`);
                     
-                    // Try reloading once
+                    // Try reloading once with cache bust
                     if (!this.dataset.retried) {
                         this.dataset.retried = 'true';
                         console.log(`🔄 Retrying logo: ${this.src}`);
@@ -1708,11 +1729,15 @@
                         }, 100);
                         return;
                     }
+                    
+                    // Final fallback - if image appears to exist but has loading issues, try to show it anyway
+                    if (this.complete && this.width > 0) {
+                        console.log(`🔧 Using fallback display for: ${this.src}`);
+                        // Don't hide it, let CSS handle the sizing
+                        return;
+                    }
+                    
                     this.style.display = 'none';
-                };
-                
-                logo.onload = function() {
-                    console.log(`✅ Successfully loaded logo: ${this.src} (${this.naturalWidth}x${this.naturalHeight})`);
                 };
                 
                 nameWrapper.appendChild(logo);
@@ -1837,8 +1862,32 @@
                 logoImg.src = practice.logo;
                 logoImg.alt = `${practice.name} logo`;
                 logoImg.className = 'profile-logo';
+                
+                // Smart loading handler for profile logos too
+                const handleProfileLoad = () => {
+                    setTimeout(() => {
+                        if (logoImg.naturalWidth > 0) {
+                            console.log(`✅ Profile logo loaded: ${logoImg.src} (${logoImg.naturalWidth}x${logoImg.naturalHeight})`);
+                        } else if (logoImg.complete) {
+                            console.log(`✅ Profile logo loaded (no dimensions): ${logoImg.src}`);
+                        } else {
+                            console.log(`❌ Profile logo failed after timeout: ${logoImg.src}`);
+                            logoImg.style.display = 'none';
+                        }
+                    }, 500);
+                };
+                
+                logoImg.onload = handleProfileLoad;
+                
                 logoImg.onerror = function() {
                     console.log(`❌ Failed to load profile logo: ${this.src}`);
+                    
+                    // Final fallback for profile images too
+                    if (this.complete && this.width > 0) {
+                        console.log(`🔧 Using fallback display for profile: ${this.src}`);
+                        return;
+                    }
+                    
                     this.style.display = 'none';
                 };
                 
