@@ -309,6 +309,10 @@
             font-size: 0.9rem;
         }
 
+        tbody tr:first-child {
+            border-top: 3px solid transparent;
+        }
+
         tbody tr {
             transition: var(--transition);
         }
@@ -971,7 +975,7 @@
             
             <div class="featured-content">
                 <div class="featured-image">
-                    <img src="images/logos/chiropro.png" alt="ChiroPro logo" class="featured-logo">
+                    <img src="images/logos/chiropro.png" alt="ChiroPro logo" class="featured-logo" onerror="console.log('Featured logo failed to load'); this.style.display='none';">
                 </div>
                 
                 <div class="featured-info">
@@ -1034,7 +1038,7 @@
                     <p>Visit any of the chiropractic practices listed in our directory or contact them directly through their websites for more information about services, insurance acceptance, and appointments.</p>
                     <p>For comprehensive chiropractic care with advanced technology and proven results, we recommend:</p>
                     <div class="premium-contact">
-                        <img src="images/logos/chiropro.png" alt="ChiroPro logo" class="contact-logo">
+                        <img src="images/logos/chiropro.png" alt="ChiroPro logo" class="contact-logo" onerror="console.log('Contact logo failed to load'); this.style.display='none';">
                         <div>
                             <h4>ChiroPro</h4>
                             <p>Phone: (618) 234-8300</p>
@@ -1556,6 +1560,12 @@
             console.log('📊 Chiropractors data loaded:', chiropractorsData.length, 'practices');
             console.log('❓ FAQ data loaded:', faqData.length, 'questions');
             
+            // Debug logo paths
+            console.log('🖼️ Logo paths check:');
+            chiropractorsData.forEach(practice => {
+                console.log(`${practice.name}: ${practice.logo}`);
+            });
+            
             try {
                 initializeNavigation();
                 console.log('✅ Navigation initialized');
@@ -1680,6 +1690,10 @@
                 logo.src = practice.logo;
                 logo.alt = `${practice.name} Logo`;
                 logo.classList.add('practice-logo-small');
+                logo.onerror = function() {
+                    console.log(`Failed to load logo: ${this.src}`);
+                    this.style.display = 'none';
+                };
                 nameWrapper.appendChild(logo);
                 
                 const nameSpan = document.createElement('span');
@@ -1802,6 +1816,10 @@
                 logoImg.src = practice.logo;
                 logoImg.alt = `${practice.name} logo`;
                 logoImg.className = 'profile-logo';
+                logoImg.onerror = function() {
+                    console.log(`Failed to load profile logo: ${this.src}`);
+                    this.style.display = 'none';
+                };
                 
                 const profileTitle = document.createElement('div');
                 profileTitle.className = 'profile-title';
