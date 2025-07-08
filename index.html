@@ -1690,14 +1690,31 @@
                 logo.src = practice.logo;
                 logo.alt = `${practice.name} Logo`;
                 logo.classList.add('practice-logo-small');
+                
+                // Add loading attribute to help with timing
+                logo.loading = 'lazy';
+                
                 logo.onerror = function() {
                     console.log(`❌ Failed to load logo: ${this.src}`);
-                    console.log(`❌ Image status: ${this.complete}, naturalWidth: ${this.naturalWidth}`);
+                    console.log(`❌ Image complete: ${this.complete}, naturalWidth: ${this.naturalWidth}, naturalHeight: ${this.naturalHeight}`);
+                    console.log(`❌ Image width: ${this.width}, height: ${this.height}`);
+                    
+                    // Try reloading once
+                    if (!this.dataset.retried) {
+                        this.dataset.retried = 'true';
+                        console.log(`🔄 Retrying logo: ${this.src}`);
+                        setTimeout(() => {
+                            this.src = this.src + '?retry=' + Date.now();
+                        }, 100);
+                        return;
+                    }
                     this.style.display = 'none';
                 };
+                
                 logo.onload = function() {
-                    console.log(`✅ Successfully loaded logo: ${this.src}`);
+                    console.log(`✅ Successfully loaded logo: ${this.src} (${this.naturalWidth}x${this.naturalHeight})`);
                 };
+                
                 nameWrapper.appendChild(logo);
                 
                 const nameSpan = document.createElement('span');
