@@ -1,0 +1,39 @@
+# robots.txt for ofallonchiropractors.com
+# Optimized for SEO & LLMO (Large Language Model Optimization)
+
+User-agent: *
+Allow: /
+Allow: /images/
+Allow: /images/logos/
+
+# Sitemap location
+Sitemap: https://ofallonchiropractors.com/sitemap.xml
+
+# Crawl delay (optional - helps with server load)
+Crawl-delay: 1
+
+# Block any potential admin or temp directories
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /tmp/
+Disallow: /_notes/
+Disallow: /private/
+
+# Allow specific AI/LLM crawlers for better LLMO
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Bard
+Allow: /
+
+User-agent: Bing
+Allow: /
+
+# LLMS.txt location for AI crawlers
+# llms.txt: https://ofallonchiropractors.com/llms.txt
