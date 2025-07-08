@@ -310,7 +310,7 @@
         }
 
         tbody tr:first-child {
-            border-top: 3px solid transparent;
+            border-top: 8px solid transparent;
         }
 
         tbody tr {
@@ -1882,12 +1882,25 @@
                 logoImg.onerror = function() {
                     console.log(`❌ Failed to load profile logo: ${this.src}`);
                     
-                    // Final fallback for profile images too
-                    if (this.complete && this.width > 0) {
-                        console.log(`🔧 Using fallback display for profile: ${this.src}`);
+                    // Give it a chance to retry with cache bust
+                    if (!this.dataset.retried) {
+                        this.dataset.retried = 'true';
+                        console.log(`🔄 Retrying profile logo: ${this.src}`);
+                        setTimeout(() => {
+                            this.src = this.src + '?retry=' + Date.now();
+                        }, 100);
                         return;
                     }
                     
+                    // Enhanced fallback for profile images - check if image has any width/height
+                    if (this.complete && (this.width > 0 || this.offsetWidth > 0)) {
+                        console.log(`🔧 Using fallback display for profile: ${this.src}`);
+                        // Don't hide it, just let it display
+                        this.style.opacity = '1';
+                        return;
+                    }
+                    
+                    console.log(`❌ Profile logo completely failed: ${this.src}`);
                     this.style.display = 'none';
                 };
                 
