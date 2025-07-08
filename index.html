@@ -1411,7 +1411,7 @@
             rating: 5.0,
             reviews: 12,
             website: "https://backpainclinicbelleville.com/",
-            logo: "images/logos/backpainclinic.png",
+            logo: "images/logos/backpainclinic.webp",
             address: "5206 West Main St, Belleville, IL 62226",
             phone: "(618) 234-5200",
             isPremium: false,
@@ -1692,7 +1692,6 @@
                 logo.classList.add('practice-logo-small');
                 logo.onerror = function() {
                     console.log(`❌ Failed to load logo: ${this.src}`);
-                    console.log(`❌ Trying to load from: ${window.location.origin}/${this.src}`);
                     console.log(`❌ Image status: ${this.complete}, naturalWidth: ${this.naturalWidth}`);
                     this.style.display = 'none';
                 };
@@ -1822,7 +1821,7 @@
                 logoImg.alt = `${practice.name} logo`;
                 logoImg.className = 'profile-logo';
                 logoImg.onerror = function() {
-                    console.log(`Failed to load profile logo: ${this.src}`);
+                    console.log(`❌ Failed to load profile logo: ${this.src}`);
                     this.style.display = 'none';
                 };
                 
