@@ -1,0 +1,2245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete O'Fallon Chiropractor Guide - Compare All 15+ Practices</title>
+    <meta name="description" content="Find the perfect chiropractor in O'Fallon, IL. Compare all 15+ practices with ratings, services, insurance acceptance, and pricing. Your complete local guide.">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Global Styles - Chiropractic Theme */
+        :root {
+            --primary-color: #2c5aa0;
+            --secondary-color: #1a365d;
+            --accent-color: #4299e1;
+            --light-color: #f7fafc;
+            --dark-color: #2d3748;
+            --gray-color: #718096;
+            --light-gray: #e2e8f0;
+            --premium-color: #f6ad55;
+            --success-color: #38a169;
+            --border-radius: 5px;
+            --box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #1a252f;
+            color: white;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: var(--dark-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark-color);
+            margin: 2px 0;
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1a365d 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Matcher Section */
+        .matcher {
+            background-color: var(--light-gray);
+        }
+
+        .matcher-content {
+            max-width: 700px;
+            margin: 40px auto 0;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+
+        .matcher-question {
+            display: none;
+            padding: 30px;
+        }
+
+        .matcher-question.active {
+            display: block;
+        }
+
+        .matcher-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .matcher-option {
+            padding: 15px;
+            background-color: var(--light-gray);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .matcher-option:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .matcher-result {
+            display: none;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .matcher-result.active {
+            display: block;
+        }
+
+        #result-content {
+            margin: 20px 0;
+        }
+
+        /* Comparison Section */
+        .comparison {
+            background-color: white;
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .filter-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            background-color: white;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        th {
+            background-color: var(--secondary-color);
+            color: white;
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+            white-space: nowrap;
+            font-size: 0.9rem;
+        }
+
+        tbody tr {
+            transition: var(--transition);
+        }
+
+        tbody tr:hover {
+            background-color: var(--light-gray);
+        }
+
+        .premium-row {
+            background-color: rgba(246, 173, 85, 0.1);
+        }
+
+        .premium-row:hover {
+            background-color: rgba(246, 173, 85, 0.2);
+        }
+
+        .practice-logo-small {
+            height: 30px;
+            width: 30px;
+            margin-right: 10px;
+            object-fit: contain;
+        }
+
+        .practice-name-cell {
+            vertical-align: middle;
+        }
+
+        .name-wrapper {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        td {
+            vertical-align: middle;
+        }
+
+        .star-rating {
+            color: var(--premium-color);
+        }
+
+        /* Profiles Section */
+        .profiles {
+            background-color: var(--light-gray);
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .profile-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-header {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .profile-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin-right: 15px;
+        }
+
+        .profile-title h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .profile-type {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+
+        .profile-body {
+            padding: 20px;
+        }
+
+        .profile-info {
+            margin-bottom: 15px;
+        }
+
+        .profile-info h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .profile-info p, .profile-info ul {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+
+        .profile-info ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        .profile-footer {
+            padding: 15px 20px;
+            background-color: var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .profile-rating {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-rating .star-rating {
+            margin-right: 5px;
+        }
+
+        .profile-link a {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .premium-card {
+            border: 2px solid var(--premium-color);
+        }
+
+        .premium-badge {
+            background-color: var(--premium-color);
+            color: var(--dark-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /* Featured Section */
+        .featured {
+            background-color: white;
+        }
+
+        .featured-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .featured-image {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .featured-logo {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+        }
+
+        .featured-info {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .featured-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .benefit {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .benefit:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .benefit h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background-color: white;
+        }
+
+        .faq-list {
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-question h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            flex: 1;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            padding: 0 0 20px;
+            display: none;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-answer p {
+            margin-bottom: 15px;
+        }
+
+        .faq-answer ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--light-gray);
+        }
+
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .map-container {
+            flex: 1;
+            min-width: 300px;
+            height: 450px;
+        }
+
+        .map-container iframe {
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .premium-contact {
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .contact-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-right: 20px;
+        }
+
+        .premium-contact h4 {
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .premium-contact p {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-logo h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: #a3c2db;
+        }
+
+        .footer-links ul li a:hover {
+            color: white;
+        }
+
+        .footer-disclaimer {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            nav {
+                width: 100%;
+                margin-top: 15px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                display: none;
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+                margin-left: 0;
+            }
+            
+            .menu-toggle {
+                display: flex;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .featured-content {
+                flex-direction: column;
+            }
+            
+            .featured-image {
+                order: -1;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .filters {
+                flex-direction: column;
+            }
+            
+            .matcher-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-benefits {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>O'Fallon Chiropractors Directory</h1>
+            <nav>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#matcher">Find Your Match</a></li>
+                    <li><a href="#comparison">Quick Compare</a></li>
+                    <li><a href="#profiles">Practice Profiles</a></li>
+                    <li><a href="#featured">Featured Practice</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <h2>Complete O'Fallon Chiropractor Guide - Compare All 15+ Practices</h2>
+            <p>Find the perfect chiropractor for back pain, neck pain, headaches, and more. Compare all practices in O'Fallon, Shiloh, and surrounding areas with ratings, services, insurance acceptance, and pricing.</p>
+            <div class="hero-buttons">
+                <a href="#comparison" class="btn btn-primary">Compare All Chiropractors</a>
+                <a href="#matcher" class="btn btn-secondary">Find My Perfect Match</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Story Section -->
+    <section style="background-color: white; padding: 60px 0;">
+        <div class="container">
+            <h2 style="color: var(--secondary-color); margin-bottom: 30px; text-align: center;">Looking for a Chiropractor in O'Fallon? You're Not Alone.</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 20px;">
+                    With 15+ chiropractic practices spread across O'Fallon, Shiloh, and the surrounding Metro East areas, choosing the right chiropractor can feel overwhelming.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 20px;">
+                    Maybe you've driven past The Joint on Green Mount Crossing wondering about their walk-in policy, or you've heard about ChiroPro's advanced spinal decompression but aren't sure if they accept your insurance. Perhaps you need someone who specializes in sports injuries or prenatal care, or you're dealing with chronic back pain and need a practice that offers comprehensive treatment options beyond basic adjustments.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 30px; font-weight: 600;">
+                    That's exactly why we created this complete comparison guide. We've researched every practice, called about insurance acceptance, and organized everything so you can find your perfect chiropractic match without the runaround.
+                </p>
+                
+                <!-- Stats Section -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin: 40px 0; text-align: center;">
+                    <div style="background-color: var(--light-gray); padding: 30px 20px; border-radius: var(--border-radius);">
+                        <h3 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 10px;">15+</h3>
+                        <p style="font-weight: 600; margin: 0;">Practices Compared</p>
+                    </div>
+                    <div style="background-color: var(--light-gray); padding: 30px 20px; border-radius: var(--border-radius);">
+                        <h3 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 10px;">5min</h3>
+                        <p style="font-weight: 600; margin: 0;">To Find Your Match</p>
+                    </div>
+                    <div style="background-color: var(--light-gray); padding: 30px 20px; border-radius: var(--border-radius);">
+                        <h3 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 10px;">100%</h3>
+                        <p style="font-weight: 600; margin: 0;">Local & Unbiased</p>
+                    </div>
+                </div>
+
+                <!-- Why Compare Section -->
+                <div style="background-color: var(--light-gray); padding: 30px; border-radius: var(--border-radius); margin-top: 40px; text-align: left;">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 20px; text-align: center;">Why Compare Before You Commit?</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 15px;">
+                        Chiropractic care in O'Fallon ranges from $20 walk-in adjustments at corporate chains to $150+ comprehensive evaluations at premium wellness centers. But advertised prices rarely tell the whole story. Insurance acceptance, treatment techniques, and availability of services like massage therapy or spinal decompression can turn a "great deal" into a frustrating experience.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.7; margin: 0; font-weight: 600; text-align: center;">
+                        Our side-by-side comparison shows you exactly what to expect at each location, helping you make an informed decision that saves both time and money.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Matcher Section -->
+    <section id="matcher" class="matcher">
+        <div class="container">
+            <h2>Find Your Chiropractic Match</h2>
+            <p>Answer a few questions about your specific needs and preferences to find the perfect chiropractic practice for you.</p>
+            
+            <div class="matcher-content">
+                <div class="matcher-question active" id="question-1">
+                    <h3>What is the primary reason you're seeking chiropractic care?</h3>
+                    <div class="matcher-options">
+                        <button class="matcher-option" data-value="auto">Car Accident Injury</button>
+                        <button class="matcher-option" data-value="sports">Sports/Athletic Injury</button>
+                        <button class="matcher-option" data-value="work">Work-Related Injury</button>
+                        <button class="matcher-option" data-value="chronic">Chronic Pain (back, neck, sciatica)</button>
+                        <button class="matcher-option" data-value="headaches">Headaches/Migraines</button>
+                        <button class="matcher-option" data-value="wellness">General Wellness/"Tune-Up"</button>
+                        <button class="matcher-option" data-value="pregnancy">Pregnancy-Related Pain</button>
+                        <button class="matcher-option" data-value="pediatric">Care for Child/Infant</button>
+                    </div>
+                </div>
+                
+                <div class="matcher-question" id="question-2">
+                    <h3>How important is scheduling flexibility to you?</h3>
+                    <div class="matcher-options">
+                        <button class="matcher-option" data-value="critical">Critical - I need same-day or evening/weekend hours</button>
+                        <button class="matcher-option" data-value="preferred">Preferred - I'd like flexible options but can plan ahead</button>
+                        <button class="matcher-option" data-value="standard">Not important - I can make standard daytime appointments</button>
+                    </div>
+                </div>
+                
+                <div class="matcher-question" id="question-3">
+                    <h3>What is your preferred treatment approach?</h3>
+                    <div class="matcher-options">
+                        <button class="matcher-option" data-value="gentle">As gentle as possible (instrument-based)</button>
+                        <button class="matcher-option" data-value="traditional">Traditional hands-on manual adjustments</button>
+                        <button class="matcher-option" data-value="comprehensive">Comprehensive care (PT, massage, X-rays on-site)</button>
+                        <button class="matcher-option" data-value="open">I'm open to the doctor's recommendation</button>
+                    </div>
+                </div>
+                
+                <div class="matcher-result" id="matcher-result">
+                    <h3>Your Ideal Chiropractic Practice Match</h3>
+                    <div id="result-content"></div>
+                    <button id="restart-matcher" class="btn btn-secondary">Start Over</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="comparison">
+        <div class="container">
+            <h2>Chiropractic Practice Comparison Chart</h2>
+            <p>Compare all chiropractic practices in the O'Fallon area side by side to find the perfect match for your health needs.</p>
+            
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="type-filter">Practice Type</label>
+                    <select id="type-filter">
+                        <option value="all">All Types</option>
+                        <option value="wellness">Wellness Center</option>
+                        <option value="general">General/Family</option>
+                        <option value="sports">Sports Injury</option>
+                        <option value="convenience">Convenience Chain</option>
+                        <option value="specialty">Specialty Practice</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="hours-filter">Available Hours</label>
+                    <select id="hours-filter">
+                        <option value="all">All Hours</option>
+                        <option value="evening">Evening Hours</option>
+                        <option value="weekend">Weekend Hours</option>
+                        <option value="walkin">Walk-In Available</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="service-filter">Special Services</label>
+                    <select id="service-filter">
+                        <option value="all">All Services</option>
+                        <option value="massage">Massage Therapy</option>
+                        <option value="xray">X-Ray On-Site</option>
+                        <option value="pt">Physical Therapy</option>
+                        <option value="auto">Auto Accidents</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="table-container">
+                <table id="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Practice Name</th>
+                            <th>Type</th>
+                            <th>Specialties</th>
+                            <th>Hours</th>
+                            <th>Special Services</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profiles Section -->
+    <section id="profiles" class="profiles">
+        <div class="container">
+            <h2>Chiropractic Practice Profiles</h2>
+            <p>Detailed information about each chiropractic practice in the O'Fallon area to help you make an informed decision.</p>
+            
+            <div id="practice-profiles" class="profile-grid">
+                <!-- Practice profile cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section id="featured" class="featured">
+        <div class="container">
+            <div class="premium-badge">Preferred</div>
+            <h2>Featured Practice: ChiroPro</h2>
+            <p>Our top recommendation for comprehensive chiropractic care with advanced technology and multi-location convenience in the Metro East region.</p>
+            
+            <div class="featured-content">
+                <div class="featured-image">
+                    <img src="images/logos/chiropro.png" alt="ChiroPro logo" class="featured-logo">
+                </div>
+                
+                <div class="featured-info">
+                    <h3>Why ChiroPro Stands Out</h3>
+                    <p>As the Metro East region's premier comprehensive chiropractic wellness center, ChiroPro offers the advanced technology and integrated care that today's patients need. With their flagship 5,500-square-foot facility in Shiloh and a remarkable 98% patient satisfaction rate, they provide everything from spinal decompression to therapeutic massage under one trusted roof.</p>
+                    
+                    <div class="featured-benefits">
+                        <div class="benefit">
+                            <h4>Advanced Technology</h4>
+                            <p>Spinal decompression, digital X-rays, and state-of-the-art equipment</p>
+                        </div>
+                        
+                        <div class="benefit">
+                            <h4>Comprehensive Services</h4>
+                            <p>Chiropractic care, massage therapy, weight loss, neuropathy treatment</p>
+                        </div>
+                        
+                        <div class="benefit">
+                            <h4>98% Satisfaction Rate</h4>
+                            <p>Remarkable patient satisfaction with proven results</p>
+                        </div>
+                        
+                        <div class="benefit">
+                            <h4>Multi-Location Convenience</h4>
+                            <p>Five locations across the Metro East region</p>
+                        </div>
+                    </div>
+                    
+                    <a href="https://www.chiropro.com/shiloh-il/" target="_blank" class="btn btn-primary">Visit ChiroPro</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <p>Common questions about chiropractic care and choosing a chiropractor in the O'Fallon area.</p>
+            
+            <div class="faq-list">
+                <!-- FAQ items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Find Your Chiropractor</h2>
+            <p>Locate all chiropractic practices in the O'Fallon area and start your journey to better health today.</p>
+            
+            <div class="contact-content">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d24966.682117028735!2d-89.92642272345581!3d38.59219199650342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1schiropractors%20near%20O&#39;Fallon%2C%20IL%2062269!5e0!3m2!1sen!2sus!4v1653508272909!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Ready to start your chiropractic care journey?</h3>
+                    <p>Visit any of the chiropractic practices listed in our directory or contact them directly through their websites for more information about services, insurance acceptance, and appointments.</p>
+                    <p>For comprehensive chiropractic care with advanced technology and proven results, we recommend:</p>
+                    <div class="premium-contact">
+                        <img src="images/logos/chiropro.png" alt="ChiroPro logo" class="contact-logo">
+                        <div>
+                            <h4>ChiroPro</h4>
+                            <p>Phone: (618) 234-8300</p>
+                            <p>Address: 1231 Thouvenot Lane, Suite 100, Shiloh, IL 62269</p>
+                            <p>Website: <a href="https://www.chiropro.com/shiloh-il/" target="_blank">chiropro.com/shiloh-il</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>O'Fallon Chiropractors Directory</h3>
+                    <p>Your guide to chiropractic care in the 62269 area</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#matcher">Find Your Match</a></li>
+                        <li><a href="#comparison">Comparison Chart</a></li>
+                        <li><a href="#profiles">Practice Profiles</a></li>
+                        <li><a href="#featured">Featured Practice</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-disclaimer">
+                    <h4>Disclaimer</h4>
+                    <p>This directory is for informational purposes only. Information is subject to change. Please contact individual chiropractic practices for the most current services, pricing, and availability. We are not affiliated with any practice listed except our featured partner.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 O'Fallon Chiropractors Directory. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Complete Chiropractors Data for O'Fallon Area
+        const chiropractorsData = [
+          {
+            id: "chiropro-shiloh",
+            name: "ChiroPro",
+            type: "Wellness Center",
+            specialties: ["Spinal Decompression", "Neuropathy Treatment", "Weight Loss Programs", "Pregnancy Care"],
+            rating: 4.9,
+            reviews: 150,
+            website: "https://www.chiropro.com/shiloh-il/",
+            logo: "images/logos/chiropro.png",
+            address: "1231 Thouvenot Ln, #100, Shiloh, IL 62269",
+            phone: "(618) 234-8300",
+            isPremium: true,
+            techniques: ["Spinal Manipulation", "Spinal Decompression", "Digital X-Ray"],
+            specialServices: ["On-Site Digital X-Ray", "Therapeutic Massage", "Weight Loss Programs", "Neuropathy Treatment"],
+            features: [
+              "5,500 sq ft flagship facility",
+              "98% patient satisfaction rate",
+              "Multiple doctors on-site",
+              "State-of-the-art technology"
+            ],
+            amenities: [
+              "Monday/Wednesday: 8 AM-12 PM, 3-6 PM",
+              "Tuesday/Thursday: 9 AM-1 PM, 3-6 PM", 
+              "Friday: 7-11 AM",
+              "$39 new patient special includes consultation, exam, X-rays"
+            ],
+            hours: "Variable by day",
+            walkIn: "By Appointment",
+            eveningHours: true,
+            weekendHours: false,
+            onSiteXray: true,
+            massageTherapy: true,
+            physicalTherapy: false,
+            autoAccident: true
+          },
+          {
+            id: "chiropractic-plus-ofallon",
+            name: "Chiropractic Plus",
+            type: "Wellness Center",
+            specialties: ["Motion Study X-Rays", "Auto Accidents", "Sports Injuries", "Pregnancy Care"],
+            rating: 5.0,
+            reviews: 75,
+            website: "https://www.chiropractic-plus.com/",
+            logo: "images/logos/chiropracticplus.jpg",
+            address: "310 E Hwy 50, Ste 2, O'Fallon, IL 62269",
+            phone: "(618) 628-4488",
+            isPremium: false,
+            techniques: ["Motion Study X-Rays", "Manual Adjustments"],
+            specialServices: ["Motion Study X-Ray Specialist", "Massage Therapy", "Nutritional Counseling", "Insurance Navigation"],
+            features: [
+              "Only practice in area with motion study X-rays",
+              "Serving O'Fallon & Scott AFB since 2007",
+              "Multiple chiropractors on-site",
+              "A+ Better Business Bureau rating"
+            ],
+            amenities: [
+              "Monday/Wednesday/Friday: 11 AM-1 PM, 3-6 PM",
+              "Tuesday/Thursday: 9 AM-3 PM",
+              "Accepts all major insurance",
+              "Text or call for appointments"
+            ],
+            hours: "Weekdays only",
+            walkIn: "By Appointment",
+            eveningHours: true,
+            weekendHours: false,
+            onSiteXray: true,
+            massageTherapy: true,
+            physicalTherapy: false,
+            autoAccident: true
+          },
+          {
+            id: "backfit-health-spine-ofallon",
+            name: "BackFit Health + Spine",
+            type: "Rehabilitation Focused",
+            specialties: ["Physical Medicine", "Rehabilitation", "Sports Medicine", "Auto Injuries"],
+            rating: 4.8,
+            reviews: 55,
+            website: "https://backfitofallon.com/",
+            logo: "images/logos/backfit.webp",
+            address: "124 Regency Park, Ste 7, O'Fallon, IL 62269",
+            phone: "(618) 622-3322",
+            isPremium: false,
+            techniques: ["Physical Medicine", "Rehabilitation Therapy"],
+            specialServices: ["Physical Therapy", "Rehabilitation", "Auto Accident Treatment"],
+            features: [
+              "Rehabilitation focused approach",
+              "Physical medicine specialists",
+              "Comprehensive recovery programs",
+              "Auto accident specialists"
+            ],
+            amenities: [
+              "Extended evening hours",
+              "Physical therapy on-site",
+              "X-ray capabilities",
+              "Insurance coordination"
+            ],
+            hours: "Extended evening",
+            walkIn: "By Appointment",
+            eveningHours: true,
+            weekendHours: false,
+            onSiteXray: true,
+            massageTherapy: false,
+            physicalTherapy: true,
+            autoAccident: true
+          },
+          {
+            id: "the-joint-shiloh",
+            name: "The Joint Chiropractic",
+            type: "Convenience Chain",
+            specialties: ["Walk-In Adjustments", "Wellness Plans", "General Chiropractic"],
+            rating: 4.8,
+            reviews: 47,
+            website: "https://www.thejoint.com/illinois/shiloh/shiloh-21002",
+            logo: "images/logos/thejoint.jpeg",
+            address: "3264 Green Mount Crossing Drive, Shiloh, IL 62269",
+            phone: "(618) 726-2555",
+            isPremium: false,
+            techniques: ["Diversified", "Thompson", "ART", "Activator"],
+            specialServices: ["No Appointment Required", "Evening & Weekend Hours", "Military Discounts", "Membership Plans"],
+            features: [
+              "Walk-in only, no appointments needed",
+              "Open 7 days a week",
+              "No insurance hassles",
+              "Affordable monthly plans"
+            ],
+            amenities: [
+              "Monday-Friday: Until 7 PM",
+              "Saturday-Sunday: 10 AM-4 PM",
+              "$79/month for 4 visits",
+              "Military discount available"
+            ],
+            hours: "7 days a week",
+            walkIn: "Walk-In Only",
+            eveningHours: true,
+            weekendHours: true,
+            onSiteXray: false,
+            massageTherapy: false,
+            physicalTherapy: false,
+            autoAccident: false
+          },
+          {
+            id: "chiro-one-ofallon",
+            name: "Chiro One",
+            type: "Convenience Chain",
+            specialties: ["Wellness Care", "Pain Relief", "Affordable Care"],
+            rating: 4.7,
+            reviews: 95,
+            website: "https://www.chiroone.com/locations/ofallon-illinois/",
+            logo: "images/logos/chiroone.svg",
+            address: "1411 W Highway 50, #103, O'Fallon, IL 62269",
+            phone: "(618) 726-1313",
+            isPremium: false,
+            techniques: ["Manual Adjustments", "Wellness Care"],
+            specialServices: ["$20 Pricing Model", "Physical Therapy", "Evening Hours"],
+            features: [
+              "Corporate chain with standardized care",
+              "$20 adjustment pricing",
+              "Located near Walmart",
+              "Physical therapy available"
+            ],
+            amenities: [
+              "Extended evening hours",
+              "Transparent pricing",
+              "Physical therapy on-site",
+              "Standardized protocols"
+            ],
+            hours: "Extended evening",
+            walkIn: "By Appointment",
+            eveningHours: true,
+            weekendHours: false,
+            onSiteXray: true,
+            massageTherapy: false,
+            physicalTherapy: true,
+            autoAccident: true
+          },
+          {
+            id: "underwood-chiropractic-ofallon",
+            name: "Underwood Chiropractic",
+            type: "Sports Injury Specialists",
+            specialties: ["Sports Medicine", "Active Release Techniques", "Soft Tissue Therapy"],
+            rating: 4.4,
+            reviews: 17,
+            website: "https://underwoodsportstherapy.com/",
+            logo: "images/logos/underwood.webp",
+            address: "772 Wall Street, Suite B, O'Fallon, IL 62269",
+            phone: "(618) 624-2400",
+            isPremium: false,
+            techniques: ["Active Release Techniques (ART)", "Sports Medicine", "Soft Tissue Therapy"],
+            specialServices: ["Sports Medicine Specialist", "Massage Therapy", "Athletic Injury Treatment"],
+            features: [
+              "Sports medicine specialists",
+              "Active Release Techniques certified",
+              "Athletes and active individuals focus",
+              "Soft tissue therapy experts"
+            ],
+            amenities: [
+              "Sports-specific treatments",
+              "ART certified practitioners",
+              "Massage therapy available",
+              "Athletic performance focus"
+            ],
+            hours: "Standard business",
+            walkIn: "By Appointment",
+            eveningHours: false,
+            weekendHours: false,
+            onSiteXray: false,
+            massageTherapy: true,
+            physicalTherapy: true,
+            autoAccident: true
+          },
+          {
+            id: "haven-chiropractic-care-ofallon",
+            name: "Haven Chiropractic Care",
+            type: "Family/Prenatal Specialist",
+            specialties: ["Pregnancy/Prenatal Care", "Pediatric Chiropractic", "Postpartum Care", "Family Wellness"],
+            rating: 5.0,
+            reviews: 25,
+            website: "https://www.havenchiropracticcare.com/",
+            logo: "images/logos/havenchiropracticcare.svg",
+            address: "102 Willow Drive, Suite A, O'Fallon, IL 62269",
+            phone: "(618) 799-0690",
+            isPremium: false,
+            techniques: ["Customized Care Plans", "Gentle Adjustments"],
+            specialServices: ["Prenatal Care Specialist", "Pediatric Care", "Family Wellness Programs"],
+            features: [
+              "Pediatric and prenatal specialists",
+              "Child-friendly environment",
+              "Customized care plans",
+              "Advanced non-invasive technology"
+            ],
+            amenities: [
+              "Prenatal care expertise",
+              "Kid-friendly atmosphere",
+              "Family wellness focus",
+              "Gentle treatment approach"
+            ],
+            hours: "Standard business",
+            walkIn: "By Appointment",
+            eveningHours: false,
+            weekendHours: false,
+            onSiteXray: false,
+            massageTherapy: false,
+            physicalTherapy: false,
+            autoAccident: false
+          },
+          {
+            id: "edmistone-acupuncture-chiropractic-shiloh",
+            name: "Edmistone Acupuncture & Chiropractic",
+            type: "Holistic Specialists",
+            specialties: ["Acupuncture", "Chinese Medicine", "Pain Management", "Fertility & Women's Health"],
+            rating: 4.9,
+            reviews: 15,
+            website: "https://edmistone.com/",
+            logo: "images/logos/edmistone.webp",
+            address: "1207 Thouvenot Lane, Suite 300, Shiloh, IL 62269",
+            phone: "(618) 624-8080",
+            isPremium: false,
+            techniques: ["Chiropractic & Acupuncture", "Chinese Medicine"],
+            specialServices: ["Acupuncture", "Chinese Medicine", "Cosmetic Facial Acupuncture", "Fertility Treatment"],
+            features: [
+              "Combines chiropractic & Chinese medicine",
+              "Acupuncture specialists",
+              "Holistic approach",
+              "Fertility and women's health focus"
+            ],
+            amenities: [
+              "Extended evening hours",
+              "Cosmetic facial acupuncture",
+              "Fertility treatments",
+              "Traditional Chinese medicine"
+            ],
+            hours: "Extended evening",
+            walkIn: "By Appointment",
+            eveningHours: true,
+            weekendHours: false,
+            onSiteXray: false,
+            massageTherapy: false,
+            physicalTherapy: false,
+            autoAccident: false
+          },
+          {
+            id: "west-highway-50-chiropractic-ofallon",
+            name: "West Highway 50 Chiropractic",
+            type: "General/Family",
+            specialties: ["General Chiropractic", "Family Care", "Pain Management"],
+            rating: 4.8,
+            reviews: 40,
+            website: "https://www.chiropractor-ofallon.com/",
+            logo: "images/logos/west50.avif",
+            address: "705 W Hwy 50, O'Fallon, IL 62269",
+            phone: "(618) 624-4242",
+            isPremium: false,
+            techniques: ["Manual Adjustments", "Traditional Chiropractic"],
+            specialServices: ["Evening Hours", "Weekend Availability", "Quality Chiropractic Care"],
+            features: [
+              "Patient-focused care",
+              "Strong community reputation", 
+              "Quality chiropractic treatments",
+              "Dr. Greg Komeshak"
+            ],
+            amenities: [
+              "Evening appointments available",
+              "Weekend availability",
+              "Strong patient testimonials",
+              "Established practice"
+            ],
+            hours: "Evening & weekend",
+            walkIn: "By Appointment",
+            eveningHours: true,
+            weekendHours: true,
+            onSiteXray: true,
+            massageTherapy: false,
+            physicalTherapy: false,
+            autoAccident: true
+          },
+          {
+            id: "back-pain-clinic-belleville",
+            name: "Back Pain Clinic",
+            type: "Pain Management Specialists",
+            specialties: ["Back Pain Treatment", "Pain Management", "Conservative Care"],
+            rating: 5.0,
+            reviews: 12,
+            website: "https://backpainclinicbelleville.com/",
+            logo: "images/logos/backpainclinic.png",
+            address: "5206 West Main St, Belleville, IL 62226",
+            phone: "(618) 234-5200",
+            isPremium: false,
+            techniques: ["Pain Management", "Conservative Treatment"],
+            specialServices: ["Free New Patient Consultation", "30+ Years Experience", "Back Pain Specialists"],
+            features: [
+              "Pain management specialists",
+              "Over 30 years established",
+              "Free consultations",
+              "Conservative treatment approach"
+            ],
+            amenities: [
+              "Free new patient consultation",
+              "Established for over 30 years",
+              "Pain management focus",
+              "Conservative care approach"
+            ],
+            hours: "Standard business",
+            walkIn: "By Appointment",
+            eveningHours: false,
+            weekendHours: false,
+            onSiteXray: true,
+            massageTherapy: true,
+            physicalTherapy: true,
+            autoAccident: true
+          },
+          {
+            id: "limitlesschiro-fairview-heights",
+            name: "LimitlessChiro",
+            type: "General/Family",
+            specialties: ["Family Chiropractic", "Root Cause Analysis", "Wellness Care"],
+            rating: 5.0,
+            reviews: 60,
+            website: "https://limitlesschiro.com/locations/fairview-heights/",
+            logo: "images/logos/limitlesschiro.png",
+            address: "10513 Lincoln Trail, Fairview Heights, IL 62208",
+            phone: "(618) 555-0101",
+            isPremium: false,
+            techniques: ["Root Cause Analysis", "Family Chiropractic"],
+            specialServices: ["Evening Hours", "Root Cause Focus", "Family Atmosphere"],
+            features: [
+              "Focus on root cause of issues",
+              "Family-oriented atmosphere",
+              "Comprehensive health approach",
+              "Evening availability"
+            ],
+            amenities: [
+              "Evening hours available",
+              "Family-friendly environment",
+              "Root cause analysis",
+              "Comprehensive care"
+            ],
+            hours: "Evening available",
+            walkIn: "By Appointment",
+            eveningHours: true,
+            weekendHours: false,
+            onSiteXray: true,
+            massageTherapy: false,
+            physicalTherapy: false,
+            autoAccident: false
+          },
+          {
+            id: "kaesberg-chiropractic-clinic-belleville",
+            name: "Kaesberg Chiropractic Clinic PC",
+            type: "Auto Accident/Personal Injury",
+            specialties: ["Auto Accidents", "Personal Injury", "Workers Compensation"],
+            rating: 4.8,
+            reviews: 30,
+            website: "https://www.americanspinecenter.com/",
+            logo: "images/logos/kaesberg.webp",
+            address: "Belleville Location (call for address)",
+            phone: "(618) 233-6824",
+            isPremium: false,
+            techniques: ["Personal Injury Treatment", "Auto Accident Recovery"],
+            specialServices: ["Auto Accident Specialist", "Personal Injury Claims", "Workers Compensation"],
+            features: [
+              "Auto accident specialists",
+              "Personal injury experts",
+              "Workers compensation claims",
+              "Established since 1950"
+            ],
+            amenities: [
+              "Weekend hours available",
+              "Auto accident specialists",
+              "Insurance claim assistance",
+              "Established practice since 1950"
+            ],
+            hours: "Including weekends",
+            walkIn: "By Appointment",
+            eveningHours: false,
+            weekendHours: true,
+            onSiteXray: true,
+            massageTherapy: false,
+            physicalTherapy: true,
+            autoAccident: true
+          }
+        ];
+
+        // FAQ Data for Chiropractors
+        const faqData = [
+          {
+            question: "How do I choose the right chiropractor in O'Fallon for my specific needs?",
+            answer: "Choosing the right chiropractor depends on your specific condition and preferences. For sports injuries, consider specialists like Underwood Chiropractic who focus on Active Release Techniques. For pregnancy care, Haven Chiropractic Care specializes in prenatal and pediatric treatment. If you need comprehensive services under one roof, ChiroPro or Chiropractic Plus offer advanced technology and multiple therapies. For convenience and affordability, The Joint Chiropractic provides walk-in service 7 days a week. Always verify that your insurance is accepted and ask about their treatment approach during your initial consultation."
+          },
+          {
+            question: "Which O'Fallon chiropractors accept Blue Cross Blue Shield and other major insurance plans?",
+            answer: "Several local practices accept major insurance plans. Chiropractic Plus explicitly states they accept 'All Insurance' and are in-network with Medicare, BCBS, Aetna, and UHC. ChiroPro offers comprehensive insurance benefits reviews as part of their new patient special. The Joint Chiropractic operates primarily on a cash-pay model but offers affordable monthly plans. We always recommend calling your chosen practice to verify your specific plan is accepted, as network participation can change."
+          },
+          {
+            question: "Where can I get same-day or walk-in chiropractic care in the O'Fallon area?",
+            answer: "The Joint Chiropractic in Shiloh is your best option for walk-in care, operating on a no-appointment-needed basis seven days a week with evening hours until 7 PM and weekend hours from 10 AM-4 PM. For same-day appointments, Chiropractic Plus offers flexible scheduling by phone or text, and several other practices can often accommodate urgent needs if you call first thing in the morning."
+          },
+          {
+            question: "What should I expect to pay for chiropractic care in O'Fallon?",
+            answer: "Costs vary significantly based on the practice and services. New patient specials include: ChiroPro's $39 comprehensive special (consultation, exam, X-rays), Chiro One's $20 first appointment, and The Joint's $29 initial visit. The Joint offers ongoing care at $79/month for up to 4 visits. For comprehensive wellness centers like ChiroPro, expect higher costs but more services included. Always ask about package deals and whether your insurance covers chiropractic care."
+          },
+          {
+            question: "Which O'Fallon chiropractors have X-ray capabilities on-site?",
+            answer: "Several practices offer on-site X-ray services: ChiroPro (digital X-rays), Chiropractic Plus (including specialized motion study X-rays), BackFit Health + Spine, West Highway 50 Chiropractic, Chiro One, Back Pain Clinic, LimitlessChiro, and Kaesberg Chiropractic Clinic. Motion study X-rays at Chiropractic Plus are particularly noteworthy as they claim to be the only practice in the area offering this specialized diagnostic technique."
+          },
+          {
+            question: "Who are the best chiropractors for sports injuries in O'Fallon?",
+            answer: "For sports-related injuries, Underwood Chiropractic is specifically branded as sports medicine and soft tissue therapy specialists, with certification in Active Release Techniques (ART). BackFit Health + Spine also focuses on sports medicine and rehabilitation. ChiroPro treats sports injuries as part of their comprehensive approach. Look for practitioners certified in techniques like ART, Graston, or other sports-specific therapies."
+          },
+          {
+            question: "Are there chiropractors in O'Fallon who specialize in pregnancy and pediatric care?",
+            answer: "Haven Chiropractic Care is the area's specialist for pediatric, prenatal, and family chiropractic care, creating a welcoming environment specifically for mothers and children. ChiroPro and Chiropractic Plus also offer pregnancy care as part of their comprehensive services. When choosing prenatal care, look for practitioners trained in Webster Technique or other pregnancy-specific approaches."
+          },
+          {
+            question: "Which chiropractors near O'Fallon serve Scott Air Force Base personnel?",
+            answer: "Several practices actively serve the Scott Air Force Base community. Chiropractic Plus has been serving SAFB since 2007 and is familiar with TRICARE. The Joint Chiropractic offers military discounts. ChiroPro also provides military discounts and comprehensive care that military families appreciate. These practices understand TRICARE requirements and the physical demands of military service."
+          },
+          {
+            question: "What's the difference between corporate chain chiropractors and independent practices?",
+            answer: "Corporate chains like The Joint and Chiro One offer standardized care, transparent pricing, and convenient hours but may have less personalized treatment. Independent practices like ChiroPro, Chiropractic Plus, and Haven Chiropractic Care typically offer more individualized care, longer appointment times, and specialized services, but may have higher costs and less flexible scheduling. The best choice depends on your priorities: convenience and cost vs. personalized care and specialized services."
+          },
+          {
+            question: "How can I tell if a chiropractor is good quality and legitimate?",
+            answer: "Look for proper licensing (all chiropractors must be licensed by the state), check online reviews and ratings, verify their education and any specialty certifications, and ask about their treatment approach during a consultation. Quality indicators include: clean, professional facilities; willingness to explain treatments; realistic expectations about results; and appropriate use of X-rays (not ordering them unnecessarily). Avoid practitioners who promise miracle cures, require long-term prepaid packages, or discourage you from seeking second opinions."
+          }
+        ];
+
+        // BULLETPROOF INITIALIZATION
+        function initializeSite() {
+            console.log('🚀 Starting chiropractor site initialization...');
+            console.log('📊 Chiropractors data loaded:', chiropractorsData.length, 'practices');
+            console.log('❓ FAQ data loaded:', faqData.length, 'questions');
+            
+            try {
+                initializeNavigation();
+                console.log('✅ Navigation initialized');
+                
+                populateComparisonTable();
+                console.log('✅ Comparison table populated');
+                
+                populatePracticeProfiles();
+                console.log('✅ Practice profiles populated');
+                
+                setupFilters();
+                console.log('✅ Filters initialized');
+                
+                setupMatcher();
+                console.log('✅ Matcher initialized');
+                
+                populateFAQSection();
+                console.log('✅ FAQ section populated');
+                
+                console.log('🎉 Chiropractor site initialization complete!');
+                
+            } catch (error) {
+                console.error('❌ Error during initialization:', error);
+            }
+        }
+
+        // Multiple initialization triggers
+        document.addEventListener('DOMContentLoaded', initializeSite);
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeSite);
+        } else {
+            initializeSite();
+        }
+        
+        window.addEventListener('load', function() {
+            setTimeout(initializeSite, 100);
+        });
+        
+        setTimeout(function() {
+            if (!document.querySelector('#comparison-table tbody tr')) {
+                console.log('🔄 Fallback initialization triggered');
+                initializeSite();
+            }
+        }, 500);
+
+        // Navigation functionality
+        function initializeNavigation() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('nav ul');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    const spans = menuToggle.querySelectorAll('span');
+                    spans.forEach(span => span.classList.toggle('active'));
+                });
+            }
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        if (navMenu.classList.contains('active')) {
+                            navMenu.classList.remove('active');
+                            menuToggle.querySelectorAll('span').forEach(span => span.classList.remove('active'));
+                        }
+                        
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Populate comparison table
+        function populateComparisonTable() {
+            const tableBody = document.querySelector('#comparison-table tbody');
+            if (!tableBody) {
+                console.warn('⚠️ Comparison table tbody not found');
+                return;
+            }
+            
+            tableBody.innerHTML = '';
+            
+            // Sort practices: premium first, then by rating
+            const sortedPractices = [...chiropractorsData].sort((a, b) => {
+                if (a.isPremium && !b.isPremium) return -1;
+                if (!a.isPremium && b.isPremium) return 1;
+                
+                const ratingA = a.rating || 0;
+                const ratingB = b.rating || 0;
+                
+                if (ratingA !== ratingB) {
+                    return ratingB - ratingA;
+                }
+                
+                return a.name.localeCompare(b.name);
+            });
+            
+            sortedPractices.forEach(practice => {
+                const row = document.createElement('tr');
+                if (practice.isPremium) {
+                    row.classList.add('premium-row');
+                }
+                
+                // Practice name cell
+                const nameCell = document.createElement('td');
+                nameCell.classList.add('practice-name-cell');
+                
+                const nameWrapper = document.createElement('div');
+                nameWrapper.classList.add('name-wrapper');
+                
+                const logo = document.createElement('img');
+                logo.src = practice.logo;
+                logo.alt = `${practice.name} Logo`;
+                logo.classList.add('practice-logo-small');
+                nameWrapper.appendChild(logo);
+                
+                const nameSpan = document.createElement('span');
+                nameSpan.textContent = practice.name;
+                nameWrapper.appendChild(nameSpan);
+                
+                if (practice.isPremium) {
+                    const badge = document.createElement('span');
+                    badge.classList.add('premium-badge');
+                    badge.textContent = 'Preferred';
+                    badge.style.fontSize = '0.7rem';
+                    badge.style.padding = '2px 8px';
+                    badge.style.marginLeft = '8px';
+                    nameWrapper.appendChild(badge);
+                }
+                
+                nameCell.appendChild(nameWrapper);
+                row.appendChild(nameCell);
+                
+                // Type cell
+                const typeCell = document.createElement('td');
+                typeCell.textContent = practice.type;
+                row.appendChild(typeCell);
+                
+                // Specialties cell
+                const specialtiesCell = document.createElement('td');
+                specialtiesCell.textContent = practice.specialties.slice(0, 2).join(', ');
+                row.appendChild(specialtiesCell);
+                
+                // Hours cell
+                const hoursCell = document.createElement('td');
+                hoursCell.textContent = practice.hours;
+                row.appendChild(hoursCell);
+                
+                // Special services cell
+                const servicesCell = document.createElement('td');
+                const topServices = [];
+                if (practice.onSiteXray) topServices.push('X-Ray');
+                if (practice.massageTherapy) topServices.push('Massage');
+                if (practice.physicalTherapy) topServices.push('PT');
+                if (practice.walkIn === 'Walk-In Only') topServices.push('Walk-In');
+                servicesCell.textContent = topServices.length > 0 ? topServices.join(', ') : 'Standard Care';
+                row.appendChild(servicesCell);
+                
+                // Rating cell
+                const ratingCell = document.createElement('td');
+                
+                if (practice.rating) {
+                    const ratingDiv = document.createElement('div');
+                    ratingDiv.classList.add('star-rating');
+                    
+                    const fullStars = Math.floor(practice.rating);
+                    const hasHalfStar = practice.rating % 1 >= 0.5;
+                    
+                    for (let i = 0; i < 5; i++) {
+                        const star = document.createElement('i');
+                        
+                        if (i < fullStars) {
+                            star.className = 'fas fa-star';
+                        } else if (i === fullStars && hasHalfStar) {
+                            star.className = 'fas fa-star-half-alt';
+                        } else {
+                            star.className = 'far fa-star';
+                        }
+                        
+                        ratingDiv.appendChild(star);
+                    }
+                    
+                    const ratingText = document.createElement('div');
+                    ratingText.textContent = `${practice.rating} (${practice.reviews} reviews)`;
+                    
+                    ratingCell.appendChild(ratingDiv);
+                    ratingCell.appendChild(ratingText);
+                } else {
+                    ratingCell.textContent = 'No rating';
+                }
+                
+                row.appendChild(ratingCell);
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Populate practice profiles
+        function populatePracticeProfiles() {
+            const profilesContainer = document.getElementById('practice-profiles');
+            if (!profilesContainer) {
+                console.warn('⚠️ Practice profiles container not found');
+                return;
+            }
+            
+            profilesContainer.innerHTML = '';
+            
+            // Sort practices: premium first, then by rating
+            const sortedPractices = [...chiropractorsData].sort((a, b) => {
+                if (a.isPremium && !b.isPremium) return -1;
+                if (!a.isPremium && b.isPremium) return 1;
+                
+                const ratingA = a.rating || 0;
+                const ratingB = b.rating || 0;
+                
+                if (ratingA !== ratingB) {
+                    return ratingB - ratingA;
+                }
+                
+                return a.name.localeCompare(b.name);
+            });
+            
+            sortedPractices.forEach(practice => {
+                const profileCard = document.createElement('div');
+                profileCard.className = 'profile-card';
+                if (practice.isPremium) {
+                    profileCard.classList.add('premium-card');
+                }
+                
+                // Profile header
+                const profileHeader = document.createElement('div');
+                profileHeader.className = 'profile-header';
+                
+                const logoImg = document.createElement('img');
+                logoImg.src = practice.logo;
+                logoImg.alt = `${practice.name} logo`;
+                logoImg.className = 'profile-logo';
+                
+                const profileTitle = document.createElement('div');
+                profileTitle.className = 'profile-title';
+                
+                const nameHeading = document.createElement('h3');
+                nameHeading.textContent = practice.name;
+                if (practice.isPremium) {
+                    const premiumBadge = document.createElement('span');
+                    premiumBadge.className = 'premium-badge';
+                    premiumBadge.textContent = 'Preferred';
+                    premiumBadge.style.fontSize = '0.7rem';
+                    premiumBadge.style.padding = '2px 8px';
+                    premiumBadge.style.marginLeft = '8px';
+                    nameHeading.appendChild(premiumBadge);
+                }
+                
+                const typeText = document.createElement('div');
+                typeText.className = 'profile-type';
+                typeText.textContent = practice.type;
+                
+                profileTitle.appendChild(nameHeading);
+                profileTitle.appendChild(typeText);
+                
+                profileHeader.appendChild(logoImg);
+                profileHeader.appendChild(profileTitle);
+                
+                // Profile body
+                const profileBody = document.createElement('div');
+                profileBody.className = 'profile-body';
+                
+                // Specialties info
+                const specialtiesInfo = document.createElement('div');
+                specialtiesInfo.className = 'profile-info';
+                
+                const specialtiesHeading = document.createElement('h4');
+                specialtiesHeading.textContent = 'Specialties';
+                
+                const specialtiesList = document.createElement('ul');
+                
+                practice.specialties.forEach(specialty => {
+                    const specialtyItem = document.createElement('li');
+                    specialtyItem.textContent = specialty;
+                    specialtiesList.appendChild(specialtyItem);
+                });
+                
+                specialtiesInfo.appendChild(specialtiesHeading);
+                specialtiesInfo.appendChild(specialtiesList);
+                
+                // Techniques info
+                const techniquesInfo = document.createElement('div');
+                techniquesInfo.className = 'profile-info';
+                
+                const techniquesHeading = document.createElement('h4');
+                techniquesHeading.textContent = 'Treatment Techniques';
+                
+                const techniquesList = document.createElement('ul');
+                
+                practice.techniques.forEach(technique => {
+                    const techniqueItem = document.createElement('li');
+                    techniqueItem.textContent = technique;
+                    techniquesList.appendChild(techniqueItem);
+                });
+                
+                techniquesInfo.appendChild(techniquesHeading);
+                techniquesInfo.appendChild(techniquesList);
+                
+                // Features info
+                const featuresInfo = document.createElement('div');
+                featuresInfo.className = 'profile-info';
+                
+                const featuresHeading = document.createElement('h4');
+                featuresHeading.textContent = 'Key Features';
+                
+                const featuresList = document.createElement('ul');
+                
+                practice.features.forEach(feature => {
+                    const featureItem = document.createElement('li');
+                    featureItem.textContent = feature;
+                    featuresList.appendChild(featureItem);
+                });
+                
+                featuresInfo.appendChild(featuresHeading);
+                featuresInfo.appendChild(featuresList);
+                
+                profileBody.appendChild(specialtiesInfo);
+                profileBody.appendChild(techniquesInfo);
+                profileBody.appendChild(featuresInfo);
+                
+                // Profile footer
+                const profileFooter = document.createElement('div');
+                profileFooter.className = 'profile-footer';
+                
+                const ratingDiv = document.createElement('div');
+                ratingDiv.className = 'profile-rating';
+                
+                if (practice.rating) {
+                    const ratingStars = document.createElement('div');
+                    ratingStars.className = 'star-rating';
+                    
+                    const fullStars = Math.floor(practice.rating);
+                    const hasHalfStar = practice.rating % 1 >= 0.5;
+                    
+                    for (let i = 0; i < fullStars; i++) {
+                        ratingStars.innerHTML += '★';
+                    }
+                    
+                    if (hasHalfStar) {
+                        ratingStars.innerHTML += '½';
+                    }
+                    
+                    const ratingText = document.createElement('span');
+                    ratingText.textContent = `${practice.rating} (${practice.reviews} reviews)`;
+                    
+                    ratingDiv.appendChild(ratingStars);
+                    ratingDiv.appendChild(ratingText);
+                } else {
+                    ratingDiv.textContent = 'No rating';
+                }
+                
+                const linkDiv = document.createElement('div');
+                linkDiv.className = 'profile-link';
+                
+                const websiteLink = document.createElement('a');
+                websiteLink.href = practice.website;
+                websiteLink.target = '_blank';
+                websiteLink.textContent = 'Visit Website';
+                
+                linkDiv.appendChild(websiteLink);
+                
+                profileFooter.appendChild(ratingDiv);
+                profileFooter.appendChild(linkDiv);
+                
+                // Assemble profile card
+                profileCard.appendChild(profileHeader);
+                profileCard.appendChild(profileBody);
+                profileCard.appendChild(profileFooter);
+                
+                profilesContainer.appendChild(profileCard);
+            });
+        }
+
+        // Setup filter functionality
+        function setupFilters() {
+            const typeFilter = document.getElementById('type-filter');
+            const hoursFilter = document.getElementById('hours-filter');
+            const serviceFilter = document.getElementById('service-filter');
+            
+            if (!typeFilter || !hoursFilter || !serviceFilter) {
+                console.warn('⚠️ Filter elements not found');
+                return;
+            }
+            
+            const applyFilters = () => {
+                const typeValue = typeFilter.value;
+                const hoursValue = hoursFilter.value;
+                const serviceValue = serviceFilter.value;
+                
+                const filteredPractices = chiropractorsData.filter(practice => {
+                    // Type filter
+                    if (typeValue !== 'all') {
+                        const typeMatch = practice.type.toLowerCase().includes(typeValue);
+                        if (!typeMatch) return false;
+                    }
+                    
+                    // Hours filter
+                    if (hoursValue !== 'all') {
+                        if (hoursValue === 'evening' && !practice.eveningHours) return false;
+                        if (hoursValue === 'weekend' && !practice.weekendHours) return false;
+                        if (hoursValue === 'walkin' && practice.walkIn !== 'Walk-In Only') return false;
+                    }
+                    
+                    // Service filter
+                    if (serviceValue !== 'all') {
+                        if (serviceValue === 'massage' && !practice.massageTherapy) return false;
+                        if (serviceValue === 'xray' && !practice.onSiteXray) return false;
+                        if (serviceValue === 'pt' && !practice.physicalTherapy) return false;
+                        if (serviceValue === 'auto' && !practice.autoAccident) return false;
+                    }
+                    
+                    return true;
+                });
+                
+                // Update the table with filtered data
+                updateTableWithFilteredData(filteredPractices);
+            };
+            
+            typeFilter.addEventListener('change', applyFilters);
+            hoursFilter.addEventListener('change', applyFilters);
+            serviceFilter.addEventListener('change', applyFilters);
+        }
+
+        function updateTableWithFilteredData(filteredPractices) {
+            const tableBody = document.querySelector('#comparison-table tbody');
+            tableBody.innerHTML = '';
+            
+            filteredPractices.forEach(practice => {
+                const row = document.createElement('tr');
+                if (practice.isPremium) {
+                    row.classList.add('premium-row');
+                }
+                
+                // Create cells similar to populateComparisonTable
+                const nameCell = document.createElement('td');
+                nameCell.classList.add('practice-name-cell');
+                
+                const nameWrapper = document.createElement('div');
+                nameWrapper.classList.add('name-wrapper');
+                
+                const logo = document.createElement('img');
+                logo.src = practice.logo;
+                logo.alt = `${practice.name} Logo`;
+                logo.classList.add('practice-logo-small');
+                nameWrapper.appendChild(logo);
+                
+                const nameSpan = document.createElement('span');
+                nameSpan.textContent = practice.name;
+                nameWrapper.appendChild(nameSpan);
+                
+                if (practice.isPremium) {
+                    const badge = document.createElement('span');
+                    badge.classList.add('premium-badge');
+                    badge.textContent = 'Preferred';
+                    badge.style.fontSize = '0.7rem';
+                    badge.style.padding = '2px 8px';
+                    badge.style.marginLeft = '8px';
+                    nameWrapper.appendChild(badge);
+                }
+                
+                nameCell.appendChild(nameWrapper);
+                row.appendChild(nameCell);
+                
+                // Add other cells
+                const typeCell = document.createElement('td');
+                typeCell.textContent = practice.type;
+                row.appendChild(typeCell);
+                
+                const specialtiesCell = document.createElement('td');
+                specialtiesCell.textContent = practice.specialties.slice(0, 2).join(', ');
+                row.appendChild(specialtiesCell);
+                
+                const hoursCell = document.createElement('td');
+                hoursCell.textContent = practice.hours;
+                row.appendChild(hoursCell);
+                
+                const servicesCell = document.createElement('td');
+                const topServices = [];
+                if (practice.onSiteXray) topServices.push('X-Ray');
+                if (practice.massageTherapy) topServices.push('Massage');
+                if (practice.physicalTherapy) topServices.push('PT');
+                if (practice.walkIn === 'Walk-In Only') topServices.push('Walk-In');
+                servicesCell.textContent = topServices.length > 0 ? topServices.join(', ') : 'Standard Care';
+                row.appendChild(servicesCell);
+                
+                const ratingCell = document.createElement('td');
+                if (practice.rating) {
+                    const ratingText = `${practice.rating} (${practice.reviews} reviews)`;
+                    ratingCell.textContent = ratingText;
+                } else {
+                    ratingCell.textContent = 'No rating';
+                }
+                row.appendChild(ratingCell);
+                
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Setup matcher functionality
+        function setupMatcher() {
+            const questions = document.querySelectorAll('.matcher-question');
+            const result = document.getElementById('matcher-result');
+            const resultContent = document.getElementById('result-content');
+            const restartButton = document.getElementById('restart-matcher');
+            
+            if (!questions.length || !result || !resultContent || !restartButton) {
+                console.warn('⚠️ Matcher elements not found');
+                return;
+            }
+            
+            let currentQuestion = 0;
+            const answers = {};
+            
+            questions.forEach((question, index) => {
+                const options = question.querySelectorAll('.matcher-option');
+                
+                options.forEach(option => {
+                    option.addEventListener('click', () => {
+                        answers[`question${index + 1}`] = option.getAttribute('data-value');
+                        
+                        question.classList.remove('active');
+                        
+                        if (index < questions.length - 1) {
+                            questions[index + 1].classList.add('active');
+                            currentQuestion = index + 1;
+                        } else {
+                            showMatcherResult();
+                            result.classList.add('active');
+                        }
+                    });
+                });
+            });
+            
+            restartButton.addEventListener('click', () => {
+                for (let key in answers) {
+                    delete answers[key];
+                }
+                
+                result.classList.remove('active');
+                
+                questions.forEach(q => q.classList.remove('active'));
+                questions[0].classList.add('active');
+                currentQuestion = 0;
+            });
+            
+            function showMatcherResult() {
+                let bestMatch;
+                
+                // Enhanced matching algorithm based on answers
+                if (answers.question1 === 'auto' || answers.question1 === 'work') {
+                    // Auto accidents or work injuries - recommend specialists
+                    bestMatch = chiropractorsData.find(practice => practice.id === 'kaesberg-chiropractic-clinic-belleville') ||
+                               chiropractorsData.find(practice => practice.id === 'backfit-health-spine-ofallon') ||
+                               chiropractorsData.find(practice => practice.autoAccident);
+                } else if (answers.question1 === 'sports') {
+                    // Sports injuries - recommend Underwood or sports specialists
+                    bestMatch = chiropractorsData.find(practice => practice.id === 'underwood-chiropractic-ofallon') ||
+                               chiropractorsData.find(practice => practice.type.includes('Sports'));
+                } else if (answers.question1 === 'pregnancy' || answers.question1 === 'pediatric') {
+                    // Pregnancy or pediatric - recommend Haven
+                    bestMatch = chiropractorsData.find(practice => practice.id === 'haven-chiropractic-care-ofallon');
+                } else if (answers.question2 === 'critical') {
+                    // Need immediate/flexible care - recommend The Joint
+                    bestMatch = chiropractorsData.find(practice => practice.id === 'the-joint-shiloh');
+                } else if (answers.question3 === 'comprehensive') {
+                    // Want comprehensive care - recommend ChiroPro or wellness centers
+                    bestMatch = chiropractorsData.find(practice => practice.id === 'chiropro-shiloh') ||
+                               chiropractorsData.find(practice => practice.type.includes('Wellness'));
+                } else {
+                    // Default to ChiroPro as featured practice
+                    bestMatch = chiropractorsData.find(practice => practice.id === 'chiropro-shiloh');
+                }
+                
+                if (!bestMatch) {
+                    bestMatch = chiropractorsData.find(practice => practice.id === 'chiropro-shiloh');
+                }
+                
+                // Create result content
+                resultContent.innerHTML = '';
+                
+                const resultCard = document.createElement('div');
+                resultCard.className = 'profile-card';
+                if (bestMatch.isPremium) {
+                    resultCard.classList.add('premium-card');
+                }
+                
+                resultCard.innerHTML = `
+                    <div class="profile-header">
+                        <img src="${bestMatch.logo}" alt="${bestMatch.name} logo" class="profile-logo">
+                        <div class="profile-title">
+                            <h3>${bestMatch.name}${bestMatch.isPremium ? '<span class="premium-badge" style="font-size: 0.7rem; padding: 2px 8px; margin-left: 8px;">Preferred</span>' : ''}</h3>
+                            <div class="profile-type">${bestMatch.type}</div>
+                        </div>
+                    </div>
+                    <div class="profile-body">
+                        <p>Based on your preferences, <strong>${bestMatch.name}</strong> is your ideal chiropractic match!</p>
+                        <div class="profile-info">
+                            <h4>Why this match:</h4>
+                            <ul>
+                                ${bestMatch.features.map(feature => `<li>${feature}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="profile-info">
+                            <h4>Contact Information:</h4>
+                            <p><strong>Phone:</strong> ${bestMatch.phone}</p>
+                            <p><strong>Address:</strong> ${bestMatch.address}</p>
+                        </div>
+                        <a href="${bestMatch.website}" target="_blank" class="btn btn-primary" style="margin-top: 20px; display: inline-block;">Visit ${bestMatch.name}</a>
+                    </div>
+                `;
+                
+                resultContent.appendChild(resultCard);
+            }
+        }
+
+        // Populate FAQ section
+        function populateFAQSection() {
+            const faqList = document.querySelector('.faq-list');
+            if (!faqList || !faqData) {
+                console.warn('⚠️ FAQ container not found');
+                return;
+            }
+            
+            faqList.innerHTML = '';
+            
+            faqData.forEach((faq, index) => {
+                const faqItem = document.createElement('div');
+                faqItem.classList.add('faq-item');
+                
+                const faqQuestion = document.createElement('div');
+                faqQuestion.classList.add('faq-question');
+                
+                const faqQuestionText = document.createElement('h3');
+                faqQuestionText.textContent = faq.question;
+                faqQuestion.appendChild(faqQuestionText);
+                
+                const faqToggle = document.createElement('span');
+                faqToggle.classList.add('faq-toggle');
+                faqToggle.textContent = '+';
+                faqQuestion.appendChild(faqToggle);
+                
+                faqItem.appendChild(faqQuestion);
+                
+                const faqAnswer = document.createElement('div');
+                faqAnswer.classList.add('faq-answer');
+                
+                const faqAnswerContent = document.createElement('p');
+                faqAnswerContent.textContent = faq.answer;
+                faqAnswer.appendChild(faqAnswerContent);
+                
+                faqItem.appendChild(faqAnswer);
+                
+                // Add click event
+                faqQuestion.addEventListener('click', function() {
+                    // Close other items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        if (item !== faqItem && item.classList.contains('active')) {
+                            item.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    faqItem.classList.toggle('active');
+                });
+                
+                faqList.appendChild(faqItem);
+            });
+            
+            console.log('✅ FAQ section populated with', faqData.length, 'questions');
+        }
+    </script>
+</body>
+</html>
