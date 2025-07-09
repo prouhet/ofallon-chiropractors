@@ -369,6 +369,9 @@
             overflow: hidden;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .profile-card:hover {
@@ -402,6 +405,7 @@
 
         .profile-body {
             padding: 20px;
+            flex-grow: 1;
         }
 
         .profile-info {
@@ -429,6 +433,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-top: auto;
         }
 
         .profile-rating {
@@ -1686,6 +1691,26 @@
           }
         ];
 
+        // SORT FUNCTION FOR MAINTAINING PREMIUM FIRST ORDER
+        function sortPracticesForDisplay(practices) {
+            return [...practices].sort((a, b) => {
+                // Premium practices always come first
+                if (a.isPremium && !b.isPremium) return -1;
+                if (!a.isPremium && b.isPremium) return 1;
+                
+                // Then sort by rating (highest first)
+                const ratingA = a.rating || 0;
+                const ratingB = b.rating || 0;
+                
+                if (ratingA !== ratingB) {
+                    return ratingB - ratingA;
+                }
+                
+                // Finally by name alphabetically
+                return a.name.localeCompare(b.name);
+            });
+        }
+
         // BULLETPROOF INITIALIZATION
         function initializeSite() {
             console.log('🚀 Starting chiropractor site initialization...');
@@ -1790,20 +1815,8 @@
             
             tableBody.innerHTML = '';
             
-            // Sort practices: premium first, then by rating
-            const sortedPractices = [...chiropractorsData].sort((a, b) => {
-                if (a.isPremium && !b.isPremium) return -1;
-                if (!a.isPremium && b.isPremium) return 1;
-                
-                const ratingA = a.rating || 0;
-                const ratingB = b.rating || 0;
-                
-                if (ratingA !== ratingB) {
-                    return ratingB - ratingA;
-                }
-                
-                return a.name.localeCompare(b.name);
-            });
+            // Use the sort function to ensure premium practices appear first
+            const sortedPractices = sortPracticesForDisplay(chiropractorsData);
             
             sortedPractices.forEach(practice => {
                 const row = document.createElement('tr');
@@ -1934,20 +1947,8 @@
             
             profilesContainer.innerHTML = '';
             
-            // Sort practices: premium first, then by rating
-            const sortedPractices = [...chiropractorsData].sort((a, b) => {
-                if (a.isPremium && !b.isPremium) return -1;
-                if (!a.isPremium && b.isPremium) return 1;
-                
-                const ratingA = a.rating || 0;
-                const ratingB = b.rating || 0;
-                
-                if (ratingA !== ratingB) {
-                    return ratingB - ratingA;
-                }
-                
-                return a.name.localeCompare(b.name);
-            });
+            // Use the sort function to ensure premium practices appear first
+            const sortedPractices = sortPracticesForDisplay(chiropractorsData);
             
             sortedPractices.forEach(practice => {
                 const profileCard = document.createElement('div');
@@ -2070,7 +2071,7 @@
                 profileBody.appendChild(techniquesInfo);
                 profileBody.appendChild(featuresInfo);
                 
-                // Profile footer
+                // Profile footer - FIXED: Always at bottom using CSS
                 const profileFooter = document.createElement('div');
                 profileFooter.className = 'profile-footer';
                 
@@ -2139,6 +2140,8 @@
                 const hoursValue = hoursFilter.value;
                 const serviceValue = serviceFilter.value;
                 
+                console.log('🔍 Applying filters:', { typeValue, hoursValue, serviceValue });
+                
                 const filteredPractices = chiropractorsData.filter(practice => {
                     // Type filter - improved logic
                     if (typeValue !== 'all') {
@@ -2192,6 +2195,8 @@
                     return true;
                 });
                 
+                console.log('✅ Filtered results:', filteredPractices.length, 'practices');
+                
                 // Update the table with filtered data
                 updateTableWithFilteredData(filteredPractices);
             };
@@ -2201,14 +2206,21 @@
             serviceFilter.addEventListener('change', applyFilters);
         }
 
+        // FIXED: Update table with filtered data - now includes proper sorting
         function updateTableWithFilteredData(filteredPractices) {
             const tableBody = document.querySelector('#comparison-table tbody');
             tableBody.innerHTML = '';
             
-            filteredPractices.forEach(practice => {
+            // ✅ FIX: Apply same sorting to filtered results to ensure premium stays on top
+            const sortedFilteredPractices = sortPracticesForDisplay(filteredPractices);
+            
+            console.log('🔄 Updating table with sorted filtered practices:', sortedFilteredPractices.length);
+            
+            sortedFilteredPractices.forEach(practice => {
                 const row = document.createElement('tr');
                 if (practice.isPremium) {
                     row.classList.add('premium-row');
+                    console.log('⭐ Premium practice in filtered results:', practice.name);
                 }
                 
                 // Create cells similar to populateComparisonTable
@@ -2367,12 +2379,14 @@
                     bestMatch = chiropractorsData.find(practice => practice.id === 'chiropro-shiloh') ||
                                chiropractorsData.find(practice => practice.type.includes('Wellness'));
                 } else {
-                    // Default to ChiroPro as featured practice
-                    bestMatch = chiropractorsData.find(practice => practice.id === 'chiropro-shiloh');
+                    // Default to premium practice (Chiropractic Plus)
+                    bestMatch = chiropractorsData.find(practice => practice.isPremium) ||
+                               chiropractorsData.find(practice => practice.id === 'chiropractic-plus-ofallon');
                 }
                 
                 if (!bestMatch) {
-                    bestMatch = chiropractorsData.find(practice => practice.id === 'chiropro-shiloh');
+                    bestMatch = chiropractorsData.find(practice => practice.isPremium) ||
+                               chiropractorsData[0]; // Fallback to first practice
                 }
                 
                 // Create result content
