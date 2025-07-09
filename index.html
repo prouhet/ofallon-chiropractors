@@ -906,13 +906,9 @@
                     <label for="type-filter">Practice Type</label>
                     <select id="type-filter">
                         <option value="all">All Types</option>
-                        <option value="wellness">Wellness Center</option>
-                        <option value="general">General/Family</option>
-                        <option value="sports">Sports Injury</option>
-                        <option value="convenience">Convenience Chain</option>
-                        <option value="holistic">Holistic Specialists</option>
-                        <option value="pain">Pain Management</option>
-                        <option value="auto">Auto Accident/Personal Injury</option>
+                        <option value="alternative">Alternative Approaches</option>
+                        <option value="general">General Chiropractic</option>
+                        <option value="medical">Medical Integration</option>
                     </select>
                 </div>
                 
@@ -921,8 +917,8 @@
                     <select id="hours-filter">
                         <option value="all">All Hours</option>
                         <option value="evening">Evening Hours</option>
-                        <option value="weekend">Weekend Hours</option>
                         <option value="walkin">Walk-In Available</option>
+                        <option value="weekend">Weekend Hours</option>
                     </select>
                 </div>
                 
@@ -930,10 +926,13 @@
                     <label for="service-filter">Special Services</label>
                     <select id="service-filter">
                         <option value="all">All Services</option>
+                        <option value="equipment">Advanced Equipment (X-ray, laser therapy, add'l equipment)</option>
+                        <option value="auto">Auto Accident Treatment</option>
                         <option value="massage">Massage Therapy</option>
-                        <option value="xray">X-Ray On-Site</option>
                         <option value="pt">Physical Therapy</option>
-                        <option value="auto">Auto Accidents</option>
+                        <option value="pregnancy">Pregnancy/Pediatric Care</option>
+                        <option value="decompression">Spinal Decompression</option>
+                        <option value="sports">Sports Injury Treatment</option>
                     </select>
                 </div>
             </div>
@@ -2143,53 +2142,73 @@
                 console.log('🔍 Applying filters:', { typeValue, hoursValue, serviceValue });
                 
                 const filteredPractices = chiropractorsData.filter(practice => {
-                    // Type filter - improved logic
+                    // Type filter - updated for new categories
                     if (typeValue !== 'all') {
                         const practiceTypeLower = practice.type.toLowerCase();
+                        const practiceName = practice.name.toLowerCase();
                         let typeMatch = false;
                         
                         switch(typeValue) {
-                            case 'wellness':
-                                typeMatch = practiceTypeLower.includes('wellness');
+                            case 'alternative':
+                                // Practices with acupuncture, functional medicine, holistic approaches
+                                typeMatch = practiceTypeLower.includes('holistic') || 
+                                           practiceName.includes('edmistone') || 
+                                           practiceName.includes('functional health') ||
+                                           practice.specialties.some(s => s.toLowerCase().includes('acupuncture')) ||
+                                           practice.specialties.some(s => s.toLowerCase().includes('functional medicine'));
                                 break;
                             case 'general':
-                                typeMatch = practiceTypeLower.includes('general') || practiceTypeLower.includes('family');
+                                // Standard chiropractic practices - not alternative, not heavily medical-integrated
+                                typeMatch = (practiceTypeLower.includes('general') || 
+                                           practiceTypeLower.includes('family') ||
+                                           practiceTypeLower.includes('convenience') ||
+                                           practiceTypeLower.includes('chain')) &&
+                                           !practiceTypeLower.includes('holistic') &&
+                                           !practiceTypeLower.includes('rehabilitation') &&
+                                           !practiceTypeLower.includes('functional medicine');
                                 break;
-                            case 'sports':
-                                typeMatch = practiceTypeLower.includes('sports');
-                                break;
-                            case 'convenience':
-                                typeMatch = practiceTypeLower.includes('convenience') || practiceTypeLower.includes('chain');
-                                break;
-                            case 'holistic':
-                                typeMatch = practiceTypeLower.includes('holistic');
-                                break;
-                            case 'pain':
-                                typeMatch = practiceTypeLower.includes('pain');
-                                break;
-                            case 'auto':
-                                typeMatch = practiceTypeLower.includes('auto') || practiceTypeLower.includes('personal injury');
+                            case 'medical':
+                                // Practices that integrate with medical/rehabilitation approaches
+                                typeMatch = practiceTypeLower.includes('wellness') ||
+                                           practiceTypeLower.includes('rehabilitation') ||
+                                           practiceTypeLower.includes('pain management') ||
+                                           (practice.physicalTherapy && practice.onSiteXray) ||
+                                           practice.specialties.some(s => s.toLowerCase().includes('physical medicine')) ||
+                                           practice.specialties.some(s => s.toLowerCase().includes('rehabilitation'));
                                 break;
                             default:
-                                typeMatch = practiceTypeLower.includes(typeValue);
+                                typeMatch = false;
                         }
                         
                         if (!typeMatch) return false;
                     }
                     
-                    // Hours filter
+                    // Hours filter - reordered but same logic
                     if (hoursValue !== 'all') {
                         if (hoursValue === 'evening' && !practice.eveningHours) return false;
-                        if (hoursValue === 'weekend' && !practice.weekendHours) return false;
                         if (hoursValue === 'walkin' && practice.walkIn !== 'Walk-In Only') return false;
+                        if (hoursValue === 'weekend' && !practice.weekendHours) return false;
                     }
                     
-                    // Service filter
+                    // Service filter - updated for new categories
                     if (serviceValue !== 'all') {
-                        if (serviceValue === 'massage' && !practice.massageTherapy) return false;
-                        if (serviceValue === 'xray' && !practice.onSiteXray) return false;
-                        if (serviceValue === 'pt' && !practice.physicalTherapy) return false;
+                        if (serviceValue === 'equipment' && !practice.onSiteXray && 
+                            !practice.specialServices.some(s => s.toLowerCase().includes('laser')) &&
+                            !practice.specialServices.some(s => s.toLowerCase().includes('decompression'))) return false;
                         if (serviceValue === 'auto' && !practice.autoAccident) return false;
+                        if (serviceValue === 'massage' && !practice.massageTherapy) return false;
+                        if (serviceValue === 'pt' && !practice.physicalTherapy) return false;
+                        if (serviceValue === 'pregnancy' && 
+                            !practice.specialties.some(s => s.toLowerCase().includes('pregnancy')) &&
+                            !practice.specialties.some(s => s.toLowerCase().includes('prenatal')) &&
+                            !practice.specialties.some(s => s.toLowerCase().includes('pediatric'))) return false;
+                        if (serviceValue === 'decompression' && 
+                            !practice.specialties.some(s => s.toLowerCase().includes('spinal decompression')) &&
+                            !practice.specialServices.some(s => s.toLowerCase().includes('decompression'))) return false;
+                        if (serviceValue === 'sports' && 
+                            !practice.specialties.some(s => s.toLowerCase().includes('sports')) &&
+                            !practiceTypeLower.includes('sports') &&
+                            !practice.specialServices.some(s => s.toLowerCase().includes('sports'))) return false;
                     }
                     
                     return true;
