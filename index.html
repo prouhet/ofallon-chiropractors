@@ -309,16 +309,9 @@
             font-size: 0.9rem;
         }
 
-th {
-    background-color: var(--secondary-color);
-    color: white;
-    position: sticky;
-    top: 0px;  /* Changed from 80px to 0px */
-    z-index: 100;
-    white-space: nowrap;
-    font-size: 0.9rem;
-    padding: 12px 15px;
-}
+        tbody tr:first-child {
+            border-top: 8px solid transparent;
+        }
 
         tbody tr {
             transition: var(--transition);
@@ -915,7 +908,9 @@ th {
                         <option value="general">General/Family</option>
                         <option value="sports">Sports Injury</option>
                         <option value="convenience">Convenience Chain</option>
-                        <option value="specialty">Specialty Practice</option>
+                        <option value="holistic">Holistic Specialists</option>
+                        <option value="pain">Pain Management</option>
+                        <option value="auto">Auto Accident/Personal Injury</option>
                     </select>
                 </div>
                 
@@ -1701,49 +1696,23 @@ th {
                 logo.src = practice.logo;
                 logo.alt = `${practice.name} Logo`;
                 logo.classList.add('practice-logo-small');
-                
-                // Add loading attribute to help with timing
                 logo.loading = 'lazy';
                 
-                // Smart loading handler
-                const handleImageLoad = () => {
-                    // Give image extra time to fully decode
-                    setTimeout(() => {
-                        if (logo.naturalWidth > 0) {
-                            console.log(`✅ Successfully loaded logo: ${logo.src} (${logo.naturalWidth}x${logo.naturalHeight})`);
-                        } else if (logo.complete) {
-                            // Image loaded but dimensions not detected - this is OK for some formats
-                            console.log(`✅ Successfully loaded logo (no dimensions): ${logo.src} - likely SVG or special format`);
-                        } else {
-                            console.log(`❌ Failed to load logo after timeout: ${logo.src}`);
-                            logo.style.display = 'none';
-                        }
-                    }, 500); // Give 500ms for image to fully decode
+                // Simple logo loading handler (like dentist directory)
+                logo.onload = function() {
+                    console.log(`✅ Logo loaded: ${this.src}`);
                 };
-                
-                logo.onload = handleImageLoad;
                 
                 logo.onerror = function() {
                     console.log(`❌ Failed to load logo: ${this.src}`);
-                    console.log(`❌ Image complete: ${this.complete}, naturalWidth: ${this.naturalWidth}, naturalHeight: ${this.naturalHeight}`);
-                    
-                    // Try reloading once with cache bust
+                    // Simple retry once
                     if (!this.dataset.retried) {
                         this.dataset.retried = 'true';
-                        console.log(`🔄 Retrying logo: ${this.src}`);
                         setTimeout(() => {
                             this.src = this.src + '?retry=' + Date.now();
                         }, 100);
                         return;
                     }
-                    
-                    // Final fallback - if image appears to exist but has loading issues, try to show it anyway
-                    if (this.complete && this.width > 0) {
-                        console.log(`🔧 Using fallback display for: ${this.src}`);
-                        // Don't hide it, let CSS handle the sizing
-                        return;
-                    }
-                    
                     this.style.display = 'none';
                 };
                 
@@ -1870,44 +1839,21 @@ th {
                 logoImg.alt = `${practice.name} logo`;
                 logoImg.className = 'profile-logo';
                 
-                // Smart loading handler for profile logos too
-                const handleProfileLoad = () => {
-                    setTimeout(() => {
-                        if (logoImg.naturalWidth > 0) {
-                            console.log(`✅ Profile logo loaded: ${logoImg.src} (${logoImg.naturalWidth}x${logoImg.naturalHeight})`);
-                        } else if (logoImg.complete) {
-                            console.log(`✅ Profile logo loaded (no dimensions): ${logoImg.src}`);
-                        } else {
-                            console.log(`❌ Profile logo failed after timeout: ${logoImg.src}`);
-                            logoImg.style.display = 'none';
-                        }
-                    }, 500);
+                // Simple loading handler for profile logos
+                logoImg.onload = function() {
+                    console.log(`✅ Profile logo loaded: ${this.src}`);
                 };
-                
-                logoImg.onload = handleProfileLoad;
                 
                 logoImg.onerror = function() {
                     console.log(`❌ Failed to load profile logo: ${this.src}`);
-                    
-                    // Give it a chance to retry with cache bust
+                    // Simple retry
                     if (!this.dataset.retried) {
                         this.dataset.retried = 'true';
-                        console.log(`🔄 Retrying profile logo: ${this.src}`);
                         setTimeout(() => {
                             this.src = this.src + '?retry=' + Date.now();
                         }, 100);
                         return;
                     }
-                    
-                    // Enhanced fallback for profile images - check if image has any width/height
-                    if (this.complete && (this.width > 0 || this.offsetWidth > 0)) {
-                        console.log(`🔧 Using fallback display for profile: ${this.src}`);
-                        // Don't hide it, just let it display
-                        this.style.opacity = '1';
-                        return;
-                    }
-                    
-                    console.log(`❌ Profile logo completely failed: ${this.src}`);
                     this.style.display = 'none';
                 };
                 
@@ -2068,9 +2014,37 @@ th {
                 const serviceValue = serviceFilter.value;
                 
                 const filteredPractices = chiropractorsData.filter(practice => {
-                    // Type filter
+                    // Type filter - improved logic
                     if (typeValue !== 'all') {
-                        const typeMatch = practice.type.toLowerCase().includes(typeValue);
+                        const practiceTypeLower = practice.type.toLowerCase();
+                        let typeMatch = false;
+                        
+                        switch(typeValue) {
+                            case 'wellness':
+                                typeMatch = practiceTypeLower.includes('wellness');
+                                break;
+                            case 'general':
+                                typeMatch = practiceTypeLower.includes('general') || practiceTypeLower.includes('family');
+                                break;
+                            case 'sports':
+                                typeMatch = practiceTypeLower.includes('sports');
+                                break;
+                            case 'convenience':
+                                typeMatch = practiceTypeLower.includes('convenience') || practiceTypeLower.includes('chain');
+                                break;
+                            case 'holistic':
+                                typeMatch = practiceTypeLower.includes('holistic');
+                                break;
+                            case 'pain':
+                                typeMatch = practiceTypeLower.includes('pain');
+                                break;
+                            case 'auto':
+                                typeMatch = practiceTypeLower.includes('auto') || practiceTypeLower.includes('personal injury');
+                                break;
+                            default:
+                                typeMatch = practiceTypeLower.includes(typeValue);
+                        }
+                        
                         if (!typeMatch) return false;
                     }
                     
@@ -2122,6 +2096,26 @@ th {
                 logo.src = practice.logo;
                 logo.alt = `${practice.name} Logo`;
                 logo.classList.add('practice-logo-small');
+                logo.loading = 'lazy';
+                
+                // Simple logo loading handler (matching dentist directory approach)
+                logo.onload = function() {
+                    console.log(`✅ Filtered logo loaded: ${this.src}`);
+                };
+                
+                logo.onerror = function() {
+                    console.log(`❌ Failed to load filtered logo: ${this.src}`);
+                    // Simple retry once
+                    if (!this.dataset.retried) {
+                        this.dataset.retried = 'true';
+                        setTimeout(() => {
+                            this.src = this.src + '?retry=' + Date.now();
+                        }, 100);
+                        return;
+                    }
+                    this.style.display = 'none';
+                };
+                
                 nameWrapper.appendChild(logo);
                 
                 const nameSpan = document.createElement('span');
